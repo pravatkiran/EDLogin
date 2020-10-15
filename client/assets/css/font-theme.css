@@ -1,0 +1,27 @@
+
+@import 'https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700';
+@import 'https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i|Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i';
+@import 'https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i';
+@import 'https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i';
+
+
+/*Nato sans*/
+body.Nato-sans {font-family: 'Noto Sans', sans-serif !important;}
+body.Nato-sans h1, body.Nato-sans h2,body.Nato-sans h3,body.Nato-sans h4,body.Nato-sans h5,body.Nato-sans h6,body.Nato-sans p,body.Nato-sans a, body.Source-Sans-Pro .ag-theme-balham{ font-family: 'Noto Sans', sans-serif !important;}
+
+
+/*Source-Sans-Pro*/
+body.Source-Sans-Pro {font-family: 'Source Sans Pro', sans-serif !important;}
+body.Source-Sans-Pro h1,body.Source-Sans-Pro h2,body.Source-Sans-Pro h3,body.Source-Sans-Pro h4,body.Source-Sans-Pro h5,body.Source-Sans-Pro h6,body.Source-Sans-Pro p,body.Source-Sans-Pro a, body.Source-Sans-Pro .ag-theme-balham{font-family: 'Source Sans Pro', sans-serif !important;}
+
+/*Quicksand*/
+body.Quicksand {font-family: 'Quicksand', sans-serif !important;   }
+body.Quicksand h1,body.Quicksand h2,body.Quicksand h3,body.Quicksand h4,body.Quicksand h5,body.Quicksand h6,body.Quicksand p,body.Quicksand a, body.Quicksand .ag-theme-balham{font-family: 'Quicksand', sans-serif !important;}
+
+/*Roboto*/
+body.Roboto{font-family: 'Roboto', sans-serif !important;}
+body.Roboto h1,body.Roboto h2,body.Roboto h3,body.Roboto h4,body.Roboto h5,body.Roboto h6,body.Roboto p,body.Roboto a, body.Roboto .ag-theme-balham{font-family: 'Roboto', sans-serif !important;}
+
+/*Karla*/
+body.Karla{font-family: 'Karla', sans-serif !important;}
+body.Karla h1,body.Karla h2,body.Karla h3,body.Karla h4,body.Karla h5,body.Karla h6,body.Karla p,body.Karla a, body.Karla .ag-theme-balham{font-family: 'Karla', sans-serif !important;}

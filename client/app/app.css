@@ -1,0 +1,9 @@
+@charset "utf-8";
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '../assets/css/main-style.css';
+@import "~devextreme/dist/css/dx.common.css";
+@import "~devextreme/dist/css/dx.light.css";
+
+#gridContainer {
+    height: 510px;
+}
