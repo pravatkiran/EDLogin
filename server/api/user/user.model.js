@@ -1,42 +1,31 @@
-import crypto from 'crypto';
+const bcrypt = require('bcrypt');
 
-var validatePresenceOf = function (value) {
-    return value && value.length;
-};
 
 export default function (sequelize, DataTypes) {
     const User = sequelize.define('Users', {
         userid: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             autoIncrement: true,     //autoincrement and primarykey is used because default id was applying
             primaryKey: true
         },
-        username: {
-            type: DataTypes.STRING
+        username: DataTypes.STRING,
+        fullname: DataTypes.STRING,
+        customerid: DataTypes.INTEGER,
+        email: DataTypes.STRING,
+        password: DataTypes.STRING,
+        active : {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
         },
-        usertitle: {
-            type: DataTypes.STRING
-        },
-        customerId: {
-            type: DataTypes.INTEGER
-        },
-        userroletypeid: {
-            type: DataTypes.INTEGER
-        },
-        company_id: {
-            type: DataTypes.INTEGER
-        },
-        emailid: {
-            type: DataTypes.STRING
-        },
-        password: {
-            type: DataTypes.STRING
-        },
+        roleid: DataTypes.INTEGER,
+        role: DataTypes.STRING,
         createdon: {
             type: DataTypes.DATE
         },
         createdby: {
-            type: DataTypes.INTEGER
+            type: DataTypes.STRING
         },
         modifiedon: {
             type: DataTypes.DATE
@@ -44,7 +33,28 @@ export default function (sequelize, DataTypes) {
         modifiedby: {
             type: DataTypes.INTEGER
         },
-        active: DataTypes.INTEGER
+        profileimage: DataTypes.STRING
+    }, {
+
+        /**
+         * Getters
+         */
+        getterMethods: {
+            // for public
+            profile: function(){
+                return {
+                    'name': this.username,
+                    'role': this.role
+                };
+            },
+
+            token: function(){
+                return{
+                    'userid': this.userid,
+                    'role': this.role
+                };
+            }
+        }
     }
     );
     return User;

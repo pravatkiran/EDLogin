@@ -11,6 +11,6 @@ var db = {
 
 // Insert models below
 db.User = db.sequelize.import('../api/user/user.model');
-db.DivisionPermission = db.sequelize.import('../api/user/divPermission.model');
-db.Customer = db.sequelize.import('../api/user/customer.model');
+// db.DivisionPermission = db.sequelize.import('../api/user/divPermission.model');
+// db.Customer = db.sequelize.import('../api/user/customer.model');
 module.exports = db;

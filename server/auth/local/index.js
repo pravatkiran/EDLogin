@@ -1,36 +1,21 @@
 import express from 'express';
 import passport from 'passport';
-// import { bcrypt } from 'bcryptjs';
-var bcrypt = require('bcryptjs');
-var jwt = require('jsonwebtoken');
+import {signToken} from '../auth.service';
 
 var router = express.Router();
 
-router.post('/', function (req, res, next) {
-    passport.authenticate('local', function (err, user, info) {
-        if (user != null) {
-            // console.log('body', req.body);
-            bcrypt.compare(req.body.password, user.password, (err, result) => {
-                console.log('err', err);
-                console.log('result', result);
-                if (result === true) {
-                    const token = jwt.sign({
-                        emailid: user.emailid,
-                        userid: user.userid
-                    }, 'supersecretkey', { expiresIn: '1d' });
-                    // console.log('token', token);
-                    // console.log('user', user);
-                    let tokenCreatedTime = new Date().toLocaleString().replace(/T/, ' ').replace(/\..+/, '');
-                    return res.status(200).json({
-                        status: 'ok', token: token, id: user.userid, tokenCreatedTime: tokenCreatedTime,
-                        username: user.username, emailid: user.emailid, userroletypeid: user.userroletypeid,
-                        usertitle: user.usertitle, customerId: user.customerId, company_id: user.company_id
-                    });
-                } else {
-                    return res.status(401).json({ status: 'fail', msg: 'Password is incorrect' });
-                }
-            })
+router.post('/', function(req, res, next) {
+    passport.authenticate('local', function(err, user, info) {
+        var error = err || info;
+        if(error) {
+            return res.status(401).json(error);
         }
+        if(!user) {
+            return res.status(404).json({message: 'Something went wrong, please try again.'});
+        }
+
+        var token = signToken(user._id, user.role); 
+        res.json({ token });
     })(req, res, next);
 });
 
