@@ -143,7 +143,10 @@ div.special > div[class*="col-"] {
 .mt-30 {
     margin-top: 30px !important;
 }
-
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
 .mb-0 {
     margin-bottom: 0px !important;
 }
@@ -4022,4 +4025,50 @@ pre i.fa.fa-calendar {
         top: -36px;
         right: 18px;
     }
+}
+.checkbox, .radio {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.checkbox, .radio {
+    display: block;
+    min-height: 20px;
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}.checkbox label, .radio label {
+    padding-left: 15px;
+}
+.checkbox label, .radio label {
+    min-height: 20px;
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+.checkbox label, .radio label {
+    display: inline;
+    font-weight: 400;
+    cursor: pointer;
+}
+ 
+.ed-p1 {
+    font-size: 1em;
+    font-weight: 400 !important;
+    color: #787878;
+}
+.col-sm-4.nopadding a{ font-size: 13px; }
+.col-sm-12.nopadding label{
+    font-size: 13px;
+    float: left;
+    margin-top: -3px;
+}.ed-page-h2 {
+    font-size: 1.7em;
+    font-weight: 400 !important;
+    color: #787878;
+}
+.mt-25[_ngcontent-c1] {
+    margin-top: 15px !important;
 }
