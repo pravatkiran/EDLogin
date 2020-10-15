@@ -11,6 +11,7 @@ import { DevExtremeModule } from 'devextreme-angular';
 
 import { MainComponent } from './main.component';
 import { MainRoutingModule } from './main-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 // import { LicenseManager } from 'ag-grid-enterprise';
 // LicenseManager.setLicenseKey("OrderGenie_Synergy_Pvt_Ltd__MultiApp_1Devs_1Deployment_20_March_2020__MTU4NDY2MjQwMDAwMA==9f63ad49a34547b9b056cce9fe224840")
@@ -30,7 +31,8 @@ import { MainRoutingModule } from './main-routing.module';
     ],
     declarations: [
 
-        MainComponent
+        MainComponent,
+        DashboardComponent
     ],
     
 })

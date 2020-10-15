@@ -13,7 +13,6 @@ import { AuthService } from '../components/auth/auth.service';
 import { JwtInterceptor } from '../components/auth/jwt.interceptor';
 import { AuthGuard } from '../components/auth/auth-guard.service';
 import { LoginComponent } from './account/login/login.component';
-import { HeaderComponent } from './header.component';
 import { AppRoutingModule } from './app-routing-module';
 
 
@@ -32,8 +31,7 @@ import { AppRoutingModule } from './app-routing-module';
     exports: [BrowserModule],
     declarations: [
         AppComponent,
-        LoginComponent,
-        HeaderComponent,
+        LoginComponent
     ],
     bootstrap: [AppComponent],
     providers: [

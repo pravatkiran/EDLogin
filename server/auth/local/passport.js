@@ -3,21 +3,17 @@ import {Strategy as LocalStrategy} from 'passport-local';
 const bcrypt = require('bcrypt');
 
 function localAuthenticate(User, username, password, done) {
-    console.log('username', username);
     User.find({
         where: {
             username: username.toLowerCase()
         }
     })
         .then(user => {
-            console.log('user', user);
             if(!user) {
                 return done(null, false, {
                     message: 'This User is not registered.'
                 });
             }
-            console.log('username', username);
-            console.log('password', password);
             bcrypt.compare(password, user.password, (err,result)=>{
                 if(err) {
                     return done(null, false, {message: 'Password is incorrect.'})
